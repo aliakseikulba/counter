@@ -8,7 +8,7 @@ const Counter = () => {
   const maxValue = 5;
 
   const incrementValue = () => {
-    setCounter(++counter);
+    setCounter(counter => counter + 1);
   };
   const resetValue = () => {
     setCounter(0);

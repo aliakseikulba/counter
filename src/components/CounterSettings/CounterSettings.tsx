@@ -6,7 +6,6 @@ import {Controller} from '../Controller/Controller';
 const CounterSettings = () => {
   return (
     <div className={s.wrapper}>
-
       <Controller />
     </div>
   );
