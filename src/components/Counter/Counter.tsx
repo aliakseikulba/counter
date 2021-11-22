@@ -3,7 +3,7 @@ import s from './Counter.module.css';
 import {Display} from '../Display/Display';
 import {Controller} from '../Controller/Controller';
 
-export const Counter = () => {
+const Counter = () => {
   let [counter, setCounter] = useState<number>(0);
   const maxValue = 5;
 
@@ -23,7 +23,9 @@ export const Counter = () => {
       <Controller increment={incrementValue}
                   reset={resetValue}
                   counterValue={counter}
-                  maxValue={maxValue}/>
+                  maxValue={maxValue}></Controller>
     </div>
   );
 };
+
+export {Counter};

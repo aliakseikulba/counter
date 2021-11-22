@@ -7,7 +7,7 @@ type DisplayPropsType = {
   maxValue: number
 }
 
-export const Display = ({content, counterValue, maxValue}:DisplayPropsType) => {
+const Display = ({content, counterValue, maxValue}:DisplayPropsType) => {
 
   const contentClass = counterValue === maxValue ? `${s.contentFinal}` : `${s.content}`;
 
@@ -17,3 +17,5 @@ export const Display = ({content, counterValue, maxValue}:DisplayPropsType) => {
     </div>
   );
 };
+
+export {Display};

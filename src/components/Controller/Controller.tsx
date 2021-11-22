@@ -4,13 +4,13 @@ import {Btn} from './Btn/Btn';
 
 
 type ControllerPropsType = {
-  increment: () => void
-  reset: () => void
-  counterValue: number
-  maxValue: number
+  increment?: () => void
+  reset?: () => void
+  counterValue?: number
+  maxValue?: number
 }
 
-export const Controller = ({increment, reset, counterValue, maxValue}: ControllerPropsType) => {
+const Controller = ({increment, reset, counterValue, maxValue}: ControllerPropsType) => {
 
   const disabledIncrement = () => {
     return (counterValue === maxValue);
@@ -26,3 +26,5 @@ export const Controller = ({increment, reset, counterValue, maxValue}: Controlle
     </div>
   );
 };
+
+export {Controller};

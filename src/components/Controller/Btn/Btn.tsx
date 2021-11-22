@@ -4,14 +4,14 @@ import s from './Btn.module.css';
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 type BtnPropsType = DefaultButtonPropsType & {
-  callback: () => void
-  isDisabled: () => boolean
+  callback?: () => void
+  isDisabled?: () => boolean
   name: string
 }
 
-export const Btn = ({callback, isDisabled, name}: BtnPropsType) => {
+const Btn = ({callback, isDisabled, name}: BtnPropsType) => {
 
-  const onDisabled = isDisabled();
+  const onDisabled = isDisabled!();
   const btnClass = onDisabled ? `${s.disabled}` : `${s.btn}`;
 
   return (
@@ -20,3 +20,5 @@ export const Btn = ({callback, isDisabled, name}: BtnPropsType) => {
     </>
   );
 };
+
+export {Btn};
