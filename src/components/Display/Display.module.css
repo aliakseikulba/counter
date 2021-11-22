@@ -1,0 +1,20 @@
+.display {
+    background-color: #61dafb;
+    width: 230px;
+    height: 160px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content {
+    color: white;
+    font-size: 125px;
+    font-weight: 600;
+}
+
+.contentFinal {
+    color: crimson;
+    font-size: 125px;
+    font-weight: 600;
+}

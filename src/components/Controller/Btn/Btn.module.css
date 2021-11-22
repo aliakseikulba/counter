@@ -1,0 +1,22 @@
+.btn {
+    width: 125px;
+    height: 35px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    background-color: #61dafb;
+    color: #282c34;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.disabled {
+    width: 125px;
+    height: 35px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    background-color: #61dafb;
+    color: #282c34;
+    font-size: 25px;
+    font-weight: 600;
+    opacity: 0.5;
+}
