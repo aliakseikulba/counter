@@ -2,18 +2,19 @@ import React, {useState} from 'react';
 import s from './Counter.module.css';
 import {Btn} from '../Btn/Btn';
 
-const Counter = () => {
-  const maxValue = 5;
-  const initialValue = 0;
-  let [counter, setCounter] = useState<number>(initialValue);
+type CounterPropsType = {
+  counter: number
+  initialValue: number
+  maxValue: number
+  incrementValue: () => void
+  resetValue: () => void
+}
+
+const Counter = ({counter, initialValue, maxValue, incrementValue, resetValue}: CounterPropsType) => {
+
 
   const contentClass = counter === maxValue ? `${s.contentFinal}` : `${s.content}`;
-  const incrementValue = () => {
-    setCounter(counter => counter + 1);
-  };
-  const resetValue = () => {
-    setCounter(initialValue);
-  };
+
   const disableIncrementBtn = () => {
     return (counter === maxValue);
   };
