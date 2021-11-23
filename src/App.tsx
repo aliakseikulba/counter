@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
 import {Counter} from './components/Counter/Counter';
-import {CounterSettings} from './components/CounterSettings/CounterSettings';
+import {Controller} from './components/Controller/Controller';
 
 function App() {
   return (
     <div className="App">
-      <CounterSettings/>
-      <Counter/>
+      <h1 className="title">custom counter</h1>
+      <div className="content">
+        <Controller/>
+        <Counter/>
+      </div>
     </div>
   );
 }

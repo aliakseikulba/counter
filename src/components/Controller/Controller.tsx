@@ -1,28 +1,14 @@
 import React from 'react';
-import s from './Controller.module.css';
-import {Btn} from './Btn/Btn';
+import s from './../Counter/Counter.module.css'
+import {Btn} from '../Btn/Btn';
 
-
-type ControllerPropsType = {
-  increment?: () => void
-  reset?: () => void
-  counterValue?: number
-  maxValue?: number
-}
-
-const Controller = ({increment, reset, counterValue, maxValue}: ControllerPropsType) => {
-
-  const disabledIncrement = () => {
-    return (counterValue === maxValue);
-  };
-  const disabledReset = () => {
-    return (counterValue === 0);
-  };
-
+const Controller = () => {
   return (
-    <div className={s.controller}>
-      <Btn callback={increment} isDisabled={disabledIncrement} name={'Inc'}/>
-      <Btn callback={reset} isDisabled={disabledReset} name={'Reset'}/>
+    <div className={s.wrapper}>
+      <div className={s.display}></div>
+      <div className={s.buttonsArea}>
+        <Btn callback={() => {}} isDisabled={() => false} name={'Set'}/>
+      </div>
     </div>
   );
 };
