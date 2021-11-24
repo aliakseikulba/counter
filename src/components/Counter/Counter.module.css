@@ -8,16 +8,31 @@
     align-items: center;
 }
 
-.content {
+.counter {
     color: #36454F;
+    font-size: 125px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.counterFinal {
+    color: crimson;
     font-size: 125px;
     font-weight: 600;
 }
 
-.contentFinal {
-    color: crimson;
-    font-size: 125px;
+.counterTitle {
+    color: #36454F;
+    font-size: 30px;
     font-weight: 600;
+    text-align: center;
+}
+
+.errorTitle {
+    color: crimson;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .buttonsArea {
