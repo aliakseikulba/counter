@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Counter.module.css';
 import {Btn} from '../Btn/Btn';
 
@@ -11,7 +11,14 @@ type CounterPropsType = {
   resetValue: () => void
 }
 
-const Counter = ({counter, startValue, maxValue, incrementValue, resetValue, changeValue}: CounterPropsType) => {
+const Counter = ({
+                   counter,
+                   startValue,
+                   maxValue,
+                   incrementValue,
+                   resetValue,
+                   changeValue
+                 }: CounterPropsType) => {
 
 
   const counterClass = counter === maxValue ? s.counterFinal : s.counter;

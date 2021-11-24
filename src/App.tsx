@@ -5,22 +5,22 @@ import {Controller} from './components/Controller/Controller';
 
 function App() {
 
-  const [startValue, setStartValue] = useState<number>(0);
-  const [maxValue, setMaxValue] = useState<number>(0);
+  const [startValue, setStartValue] = useState<number>(Number(localStorage.getItem('startValue')) || 0);
+  const [maxValue, setMaxValue] = useState<number>(Number(localStorage.getItem('maxValue')) || 5);
   const [counter, setCounter] = useState<number>(startValue);
-  const [changeValue, setChangeValue] = useState<boolean>(false);
+  const [changeValue, setChangeValue] = useState<boolean>(true);
 
   const changeStartValue = (num: number) => {
-    setChangeValue(true)
+    setChangeValue(true);
     setStartValue(num);
   };
   const changeMaxValue = (num: number) => {
-    setChangeValue(true)
+    setChangeValue(true);
     setMaxValue(num);
   };
   const changeCounter = () => {
     setCounter(startValue);
-  }
+  };
   const incrementValue = () => {
     setCounter(counter => counter + 1);
   };
@@ -30,19 +30,9 @@ function App() {
 
 
   useEffect(() => {
-    const startValueAsString = localStorage.getItem('startValue');
-    const newStartValue = JSON.parse(startValueAsString!);
-    setStartValue(newStartValue);
-    setCounter(newStartValue);
-    setChangeValue(true);
-    const maxValueAsString = localStorage.getItem('maxValue');
-    const newMaxValue = JSON.parse(maxValueAsString!);
-    setMaxValue(newMaxValue);
-  }, [])
-  useEffect(() => {
     localStorage.setItem('startValue', JSON.stringify(startValue));
     localStorage.setItem('maxValue', JSON.stringify(maxValue));
-  }, [startValue, maxValue])
+  }, [startValue, maxValue]);
 
   return (
     <div className="App">
