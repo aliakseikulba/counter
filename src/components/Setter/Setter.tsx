@@ -9,9 +9,9 @@ type SetterPropsType = {
   changeValue: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Setter = ({name,startValue, maxValue, inputValue, changeValue}: SetterPropsType) => {
+const Setter = ({name, startValue, maxValue, inputValue, changeValue}: SetterPropsType) => {
 
-  const setterClass = startValue >= maxValue ? s.errorSetter : s.setter;
+  const setterClass = startValue < 0 || startValue >= maxValue ? s.errorSetter : s.setter;
 
   return (
     <div className={s.settings}>

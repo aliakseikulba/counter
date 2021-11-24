@@ -15,7 +15,7 @@ const Counter = ({counter, startValue, maxValue, incrementValue, resetValue, cha
 
 
   const counterClass = counter === maxValue ? s.counterFinal : s.counter;
-  const errorTitle = () => startValue >= maxValue;
+  const errorTitle = () => startValue >= maxValue || startValue < 0;
 
   const disableIncrementBtn = () => {
     return counter === maxValue;

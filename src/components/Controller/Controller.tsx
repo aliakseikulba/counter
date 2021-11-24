@@ -34,7 +34,7 @@ const Controller = ({
     changeCounter();
   };
 
-  const setterBtnDisable = () => startValue >= maxValue;
+  const setterBtnDisable = () => startValue >= maxValue || startValue < 0;
 
   return (
     <>
