@@ -25,10 +25,10 @@ const Counter = ({
   const errorTitle = () => startValue >= maxValue || startValue < 0;
 
   const disableIncrementBtn = () => {
-    return counter === maxValue;
+    return counter >= maxValue;
   };
   const disableResetBtn = () => {
-    return counter === startValue;
+    return counter >= startValue;
   };
 
 
