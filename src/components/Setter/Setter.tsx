@@ -17,7 +17,7 @@ const Setter = ({name, startValue, maxValue, inputValue, changeValue}: SetterPro
     <div className={s.settings}>
       <div className={s.settingsTitle}>{name}</div>
       <input className={setterClass}
-             value={inputValue}
+             value={inputValue.toString()}
              onChange={changeValue}
              type="number"/>
     </div>
