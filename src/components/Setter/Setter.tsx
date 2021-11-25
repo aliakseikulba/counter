@@ -13,11 +13,13 @@ const Setter = ({name, startValue, maxValue, inputValue, changeValue}: SetterPro
 
   const setterClass = startValue < 0 || startValue >= maxValue ? s.errorSetter : s.setter;
 
+  const valueForRender = Number.isInteger(+inputValue) ? inputValue.toString() : Math.floor(+inputValue).toString();
+
   return (
     <div className={s.settings}>
       <div className={s.settingsTitle}>{name}</div>
       <input className={setterClass}
-             value={Math.floor(+inputValue)}
+             value={valueForRender}
              onChange={changeValue}
              type="number"/>
     </div>

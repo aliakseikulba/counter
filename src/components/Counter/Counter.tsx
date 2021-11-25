@@ -21,7 +21,7 @@ const Counter = ({
                  }: CounterPropsType) => {
 
 
-  const counterClass = counter === maxValue ? s.counterFinal : s.counter;
+  const counterClass = counter >= maxValue ? s.counterFinal : s.counter;
   const errorTitle = () => startValue >= maxValue || startValue < 0;
 
   const disableIncrementBtn = () => {
@@ -31,11 +31,12 @@ const Counter = ({
     return counter >= startValue;
   };
 
+  const counterForRender = +counter > maxValue ? Math.floor(+counter) : counter;
 
   return (
     <>
       <div className={s.display}>
-        {!changeValue && <div className={counterClass}>{counter}</div>}
+        {!changeValue && <div className={counterClass}>{counterForRender}</div>}
         {changeValue && !errorTitle() && <div className={s.counterTitle}>change value and press 'Set'</div>}
         {errorTitle() && <div className={s.errorTitle}>incorrect value!</div>}
       </div>
