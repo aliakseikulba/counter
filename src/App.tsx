@@ -14,7 +14,7 @@ function App() {
     setChangeValue(true);
     setStartValue(num);
   };
-  const changeMaxValue = (num: number) => {
+  const changeMaxValue = (num: number | string) => {
     setChangeValue(true);
     setMaxValue(num);
   };
