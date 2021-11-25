@@ -31,7 +31,7 @@ const Counter = ({
     return counter >= startValue;
   };
 
-  const counterForRender = +counter > maxValue ? Math.floor(+counter) : counter;
+  const counterForRender = +counter > maxValue ? Math.floor(+counter) : Math.floor(+counter).toString();
 
   return (
     <>
