@@ -44,7 +44,8 @@ function App() {
                       setChangeValue={setChangeValue}
                       changeStartValue={changeStartValue}
                       changeMaxValue={changeMaxValue}
-                      changeCounter={changeCounter}/>
+                      changeCounter={changeCounter}
+                      isChanged={changeValue}/>
         </div>
         <div className="wrapper">
           <Counter counter={counter}

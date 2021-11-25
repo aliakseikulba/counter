@@ -10,6 +10,7 @@ type ControllerPropsType = {
   changeStartValue: (num: number | string) => void
   changeMaxValue: (num: number | string) => void
   changeCounter: () => void
+  isChanged: boolean
 }
 
 const Controller = ({
@@ -18,15 +19,16 @@ const Controller = ({
                       changeStartValue,
                       changeMaxValue,
                       changeCounter,
-                      setChangeValue
+                      setChangeValue,
+                      isChanged
                     }: ControllerPropsType) => {
 
   const onStartValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.currentTarget.value === "" ? "" : Number(e.currentTarget.value);
+    const value = e.currentTarget.value === '' ? '' : Number(e.currentTarget.value);
     changeStartValue(value);
   };
   const onMaxValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.currentTarget.value === "" ? "" : Number(e.currentTarget.value)
+    const value = e.currentTarget.value === '' ? '' : Number(e.currentTarget.value);
     changeMaxValue(value);
   };
   const setValueToCounter = () => {
@@ -34,7 +36,8 @@ const Controller = ({
     changeCounter();
   };
 
-  const setterBtnDisable = () => startValue >= maxValue || startValue < 0 || startValue === '' || maxValue === '';
+  const setterBtnDisable = () => startValue >= maxValue ||
+    startValue < 0 || startValue === '' || maxValue === '' || !isChanged;
 
   return (
     <>
