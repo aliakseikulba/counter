@@ -5,12 +5,12 @@ import {Controller} from './components/Controller/Controller';
 
 function App() {
 
-  const [startValue, setStartValue] = useState<number>(Number(localStorage.getItem('startValue')) || 0);
-  const [maxValue, setMaxValue] = useState<number>(Number(localStorage.getItem('maxValue')) || 5);
-  const [counter, setCounter] = useState<number>(startValue);
+  const [startValue, setStartValue] = useState<number | string>(Number(localStorage.getItem('startValue')) || 0);
+  const [maxValue, setMaxValue] = useState<number | string>(Number(localStorage.getItem('maxValue')) || 5);
+  const [counter, setCounter] = useState<number | string>(startValue);
   const [changeValue, setChangeValue] = useState<boolean>(true);
 
-  const changeStartValue = (num: number) => {
+  const changeStartValue = (num: number | string) => {
     setChangeValue(true);
     setStartValue(num);
   };
@@ -22,7 +22,7 @@ function App() {
     setCounter(startValue);
   };
   const incrementValue = () => {
-    setCounter(counter => counter + 1);
+    setCounter(counter => +counter + 1);
   };
   const resetValue = () => {
     setCounter(startValue);

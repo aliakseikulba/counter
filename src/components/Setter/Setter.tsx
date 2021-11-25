@@ -3,9 +3,9 @@ import s from './Setter.module.css';
 
 type SetterPropsType = {
   name: string
-  startValue: number
-  maxValue: number
-  inputValue: number
+  startValue: number | string
+  maxValue: number | string
+  inputValue: number | string
   changeValue: (e: ChangeEvent<HTMLInputElement>) => void
 }
 

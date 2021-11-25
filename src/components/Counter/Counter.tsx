@@ -3,9 +3,9 @@ import s from './Counter.module.css';
 import {Btn} from '../Btn/Btn';
 
 type CounterPropsType = {
-  counter: number
-  startValue: number
-  maxValue: number
+  counter: number | string
+  startValue: number | string
+  maxValue: number | string
   changeValue: boolean
   incrementValue: () => void
   resetValue: () => void

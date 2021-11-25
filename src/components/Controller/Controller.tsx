@@ -4,10 +4,10 @@ import {Btn} from '../Btn/Btn';
 import {Setter} from '../Setter/Setter';
 
 type ControllerPropsType = {
-  startValue: number
-  maxValue: number
+  startValue: number | string
+  maxValue: number | string
   setChangeValue: (changeValue: boolean) => void
-  changeStartValue: (num: number) => void
+  changeStartValue: (num: number | string) => void
   changeMaxValue: (num: number) => void
   changeCounter: () => void
 }
@@ -22,7 +22,7 @@ const Controller = ({
                     }: ControllerPropsType) => {
 
   const onStartValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.currentTarget.value);
+    const value = e.currentTarget.value === "" ? "" : Number(e.currentTarget.value);
     changeStartValue(value);
   };
   const onMaxValueChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +34,7 @@ const Controller = ({
     changeCounter();
   };
 
-  const setterBtnDisable = () => startValue >= maxValue || startValue < 0;
+  const setterBtnDisable = () => startValue >= maxValue || startValue < 0 || startValue === '';
 
   return (
     <>
